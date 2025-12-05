@@ -64,6 +64,13 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
     Route::get('/admin/recipes', [RecipeController::class, 'adminIndex'])
         ->name('admin.recipes');
+
+    // Admin user management
+    Route::get('/admin/create-admin', [App\Http\Controllers\AdminController::class, 'create'])
+        ->name('admin.create');
+
+    Route::post('/admin/create-admin', [App\Http\Controllers\AdminController::class, 'store'])
+        ->name('admin.store');
 });
 
 

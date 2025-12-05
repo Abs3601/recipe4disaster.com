@@ -9,6 +9,7 @@
     </p>
 
     <a href="{{ route('admin.recipes') }}" class="btn-primary">Manage All Recipes</a>
+    <a href="{{ route('admin.create') }}" class="btn-primary">Create a new Admin</a>
 
 </div>
 
