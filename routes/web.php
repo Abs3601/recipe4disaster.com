@@ -1,0 +1,70 @@
+<?php
+
+use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RecipeController;
+
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
+
+//homepage
+Route::get('/', function () {
+    return view('welcome');
+});
+
+//profile pages
+
+Route::get('/register', [RecipeController::class, 'create'])->name('register');
+Route::get('/login', [RecipeController::class, 'index']);
+
+Route::get('/', [RecipeController::class, 'index']);
+
+Route::get('/recipes/browse', [RecipeController::class, 'browse'])
+    ->name('recipes.browse');
+
+
+Route::resource('recipes', RecipeController::class)
+    ->middleware(['auth']);
+
+// Profile overview page
+Route::get('/profile', [ProfileController::class, 'show'])
+    ->middleware('auth')
+    ->name('profile');
+
+// Edit profile
+Route::get('/profile/edit', [ProfileController::class, 'edit'])
+    ->middleware('auth')
+    ->name('profile.edit');
+
+// Update profile (PATCH)
+Route::patch('/profile', [ProfileController::class, 'update'])
+    ->middleware('auth')
+    ->name('profile.update');
+
+// Delete profile
+Route::delete('/profile', [ProfileController::class, 'destroy'])
+    ->middleware('auth')
+    ->name('profile.destroy');
+
+// Admin Routes
+Route::middleware(['auth', 'admin'])->group(function () {
+
+    Route::get('/admin', function () {
+        return view('admin.dashboard');
+    })->name('admin.dashboard');
+
+    Route::get('/admin/recipes', [RecipeController::class, 'adminIndex'])
+        ->name('admin.recipes');
+});
+
+
+require __DIR__ . '/auth.php';

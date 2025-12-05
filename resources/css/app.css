@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+    /* Hero */
+     .hero-bg {
+        @apply bg-cover bg-center bg-no-repeat 
+               w-full
+               min-h-[350px] sm:min-h-[450px] md:min-h-[550px]
+               flex flex-col justify-center items-center shadow-md text-center;
+        background-image: url('/public/images/pretzels.jpg');
+    }
+
+    /* Optional: a dark overlay for better text contrast */
+    .hero-overlay {
+        @apply absolute inset-0 bg-black/50 dark:bg-black/70;
+    }
+
+    /* Headings */
+    .h1 {
+        @apply text-3xl font-bold text-ui-textLight dark:text-ui-textDark font-brand;
+    }
+
+    .h2 {
+        @apply text-xl font-semibold text-ui-textLight dark:text-ui-textDark font-brand;
+    }
+
+    /* Paragraph / body text */
+    .p {
+        @apply text-ui-textLight dark:text-ui-textDark leading-relaxed;
+    }
+
+    /* Recipe card container */
+    .recipe-card {
+        @apply mb-6 p-6 bg-ui-lightCard dark:bg-ui-darkCard shadow-soft dark:shadow-dark 
+               rounded-brand transition-all duration-brand;
+    }
+
+    /* Hero card */
+    .hero-card {
+        @apply bg-ui-lightCard dark:bg-ui-darkCard p-8 rounded-brand
+               shadow-soft dark:shadow-dark transition-all duration-brand;
+    }
+
+    /* Buttons */
+    .btn-primary {
+        @apply bg-ui-primary text-white px-4 py-2 rounded-brand
+               hover:bg-ui-primaryHover
+               transition-all duration-brand shadow-soft;
+    }
+
+    .btn-danger {
+        @apply bg-ui-danger text-white px-4 py-2 rounded-brand
+               hover:bg-red-700
+               transition-all duration-brand shadow-soft;
+    }
+
+    .link{
+        @apply text-ui-primary hover:underline font-semibold transition-all duration-200;
+    }
+
+    /* Inputs */
+    .label {
+        @apply block font-semibold text-ui-textLight dark:text-ui-textDark mb-1;
+    }
+
+    .input {
+        @apply w-full border border-gray-300 dark:border-ui-darkCard rounded-brand 
+               bg-white dark:bg-ui-darkBg text-gray-800 dark:text-gray-200 
+               p-2 shadow-sm focus:ring-ui-primary focus:border-ui-primary;
+    }
+
+    .textarea {
+        @apply w-full border border-gray-300 dark:border-ui-darkCard rounded-brand
+               bg-white dark:bg-ui-darkBg text-gray-800 dark:text-gray-200
+               p-2 shadow-sm focus:ring-ui-primary focus:border-ui-primary;
+    }
+
+    /* Preformatted blocks */
+    .pre-box {
+        @apply bg-ui-lightCard dark:bg-ui-darkCard text-ui-textLight dark:text-ui-textDark
+               p-4 rounded-brand whitespace-pre-wrap shadow-soft dark:shadow-dark;
+    }
+
+    /* Navigation links */
+    .nav-link {
+        @apply text-ui-textLight dark:text-ui-textDark 
+               hover:text-ui-primary
+               font-semibold transition-all duration-200;
+    }
+
+    .nav-link.active {
+        @apply text-ui-primary underline;
+    }
+
+    /* Dark mode toggle */
+    .nav-toggle-btn {
+        @apply px-3 py-1 rounded-brand
+               bg-ui-primary text-white shadow-soft
+               hover:bg-ui-primaryHover
+               transition-all duration-brand;
+    }
+
+    /* Mobile Menu */
+    .mobile-menu {
+        @apply sm:hidden flex flex-col space-y-3 px-4 py-4 
+               bg-ui-lightCard dark:bg-ui-darkBg items-start text-left;
+    }
+
+    .profile-tab {
+    @apply px-4 py-2 text-ui-textLight dark:text-ui-textDark font-semibold
+           hover:text-ui-primary transition;
+}
+
+    .active-tab {
+        @apply border-b-2 border-ui-primary text-ui-primary;
+    }
+
+    .profile-tab-content {
+        @apply mt-6;
+    }
+
+}
+
+@layer utilities {
+    @keyframes mobile-slide-down {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .mobile-menu-open {
+        animation: mobile-slide-down 0.25s ease-out;
+    }
+
+    .mobile-menu-btn {
+        @apply focus:outline-none;
+        @apply text-ui-primary;
+    }
+}
