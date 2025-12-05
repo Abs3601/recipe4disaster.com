@@ -45,7 +45,7 @@ Route::get('/profile/edit', [ProfileController::class, 'edit'])
     ->middleware('auth')
     ->name('profile.edit');
 
-// Update profile (PATCH)
+// Update profile 
 Route::patch('/profile', [ProfileController::class, 'update'])
     ->middleware('auth')
     ->name('profile.update');

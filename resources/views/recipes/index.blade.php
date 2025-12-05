@@ -2,7 +2,7 @@
 
     <section class="relative hero-bg mb-14">
 
-    <!-- Optional dark overlay (recommended) -->
+    <!-- Optional dark overlay-->
     <div class="hero-overlay"></div>
 
     <div class="relative z-10 max-w-3xl mx-auto text-center">
