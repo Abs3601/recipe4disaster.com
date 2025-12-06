@@ -14,7 +14,7 @@ class ProfileController extends Controller
     /**
      * Redirect edit requests to the profile overview.
      */
-    public function edit(Request $request): \Illuminate\Http\RedirectResponse
+    public function edit(Request $request): RedirectResponse
     {
         return redirect()->route('profile');
     }

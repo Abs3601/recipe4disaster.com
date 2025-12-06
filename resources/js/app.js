@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (desktopToggle) desktopToggle.addEventListener("click", toggleTheme);
     if (mobileToggle) mobileToggle.addEventListener("click", toggleTheme);
 
-    // Prevent flash of wrong theme (FOUC)
+    // Makes sure correct theme is applied always register and login pages
     if (localStorage.getItem("theme") === "dark") {
         document.documentElement.classList.add("dark");
     }

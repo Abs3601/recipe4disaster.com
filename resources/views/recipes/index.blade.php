@@ -1,8 +1,6 @@
 <x-app-layout>
 
     <section class="relative hero-bg mb-14">
-
-    <!-- Optional dark overlay-->
     <div class="hero-overlay"></div>
 
     <div class="relative z-10 max-w-3xl mx-auto text-center">
@@ -49,9 +47,7 @@
 
 <div class="max-w-5xl mx-auto px-8">
 
-    <!-- ========================= -->
-    <!-- FEATURED RECIPES -->
-    <!-- ========================= -->
+    <!-- Featured Recipes -->
     <section class="mt-16">
 
         <h2 class="h2 mb-6">Featured Recipes</h2>

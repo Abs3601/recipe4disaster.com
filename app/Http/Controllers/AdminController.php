@@ -35,8 +35,10 @@ class AdminController extends Controller
             'name' => $validated['name'],
             'email' => $validated['email'],
             'password' => Hash::make($validated['password']),
-            'is_admin' => true,
         ]);
+
+        $user->is_admin = true;
+        $user->save();
 
         return Redirect::route('admin.dashboard')->with('status', 'admin-created');
     }

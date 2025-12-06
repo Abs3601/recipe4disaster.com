@@ -16,22 +16,19 @@ use App\Http\Controllers\RecipeController;
 |
 */
 
-//homepage
-Route::get('/', function () {
-    return view('welcome');
-});
-
 //profile pages
 
 Route::get('/register', [RecipeController::class, 'create'])->name('register');
 Route::get('/login', [RecipeController::class, 'index']);
 
+// Home page
 Route::get('/', [RecipeController::class, 'index']);
 
+// Browse recipes
 Route::get('/recipes/browse', [RecipeController::class, 'browse'])
     ->name('recipes.browse');
 
-
+// Recipe resource routes
 Route::resource('recipes', RecipeController::class)
     ->middleware(['auth']);
 
@@ -39,11 +36,6 @@ Route::resource('recipes', RecipeController::class)
 Route::get('/profile', [ProfileController::class, 'show'])
     ->middleware('auth')
     ->name('profile');
-
-// Edit profile
-Route::get('/profile/edit', [ProfileController::class, 'edit'])
-    ->middleware('auth')
-    ->name('profile.edit');
 
 // Update profile 
 Route::patch('/profile', [ProfileController::class, 'update'])

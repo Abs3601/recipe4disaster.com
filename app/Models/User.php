@@ -24,9 +24,9 @@ class User extends Authenticatable
     ];
 
     public function recipes()
-{
-    return $this->hasMany(\App\Models\Recipe::class);
-}
+    {
+        return $this->hasMany(\App\Models\Recipe::class);
+    }
 
 
     /**
@@ -47,5 +47,6 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
+        'is_admin' => 'boolean',
     ];
 }
