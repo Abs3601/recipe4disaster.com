@@ -34,7 +34,7 @@
                     Register Now
                 </a>
 
-                <a href="#" class="btn-primary">
+                <a href="{{ route('recipes.browse') }}" class="btn-primary">
                     Browse Recipes
                 </a>
             @endguest
