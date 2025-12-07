@@ -66,6 +66,8 @@ class ProfileController extends Controller
         // Load recipes belonging to this user
         $recipes = $user->recipes()->latest()->get();
 
+        $recipeCount = $user->recipes()->count();
+
         return view('profile.show', compact('user', 'recipes'));
     }
 }

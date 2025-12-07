@@ -27,7 +27,29 @@
             <p class="p"><strong>Name:</strong> {{ $user->name }}</p>
             <p class="p"><strong>Email:</strong> {{ $user->email }}</p>
         </div>
+
+        <div class="card p-6 mt-6">
+            <h2 class="h2 mb-4">Statistics</h2>
+            <p class="p"><strong>Total Recipes:</strong> {{ $recipes->count() }}</p>
+        </div>
+
+        <div class="card p-6 mt-6">
+            <h2 class="h2 mb-4"> Membership</h2>
+            <p class="p"><strong>Member Since:</strong> {{ $user->created_at->isoFormat('Do, MMMM, YYYY') }}</p>
+        </div>
+
+        <div class="card p-6 mt-6">
+        <p class="p">
+        <strong>Account Type:</strong>
+        @if($user->is_admin)
+            <span class="text-ui-primary font-semibold">Administrator</span>
+        @else
+            <span class="text-ui-muted">Standard User</span>
+        @endif
+        </p>
+        </div>
     </div>
+
 
 
     <div id="tab-settings" class="profile-tab-content hidden">
