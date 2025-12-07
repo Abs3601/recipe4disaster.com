@@ -7,7 +7,10 @@
             </div>
 
             <div class="flex items-center space-x-6">
-                <a href="https://github.com/Abs3601" target="_blank" rel="noopener noreferrer" class="link text-sm">GitHub</a>
+                <div class="flex items-center space-x-2">
+                <img src="../../images/github.png" alt="Github Logo" class="w-5 h-5">
+                <a href="https://github.com/Abs3601" target="_blank" rel="noopener noreferrer" class="link text-sm">Abs3601</a>
+                </div>
                 <a href="https://www.uws.ac.uk/" target="_blank" rel="noopener noreferrer" class="link text-sm">University of the West of Scotland</a>
             </div>
         </div>

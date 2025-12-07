@@ -1,4 +1,4 @@
-<!-- NAVBAR WRAPPER -->
+<!-- Navbar Wrapper -->
 <nav class="sticky top-0 z-50 bg-ui-lightBg/95 dark:bg-ui-darkBg/95 shadow-sm backdrop-blur-md">
 
     <!-- Desktop Navbar -->
